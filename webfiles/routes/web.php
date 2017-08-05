@@ -34,3 +34,5 @@ Route::get('viewticket', function () {
 Route::get('its', function () {
 	return view('pages/its');
 });
+
+//$logo  = public_path() . '/images/logo.jpg';

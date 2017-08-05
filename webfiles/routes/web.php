@@ -12,5 +12,25 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages/index');
+});
+
+Route::get('index', function () {
+    return view('pages/index');
+});
+
+Route::get('faq', function () {
+	return view('pages/faq');
+});
+
+Route::get('submitticket', function () {
+	return view('pages/submitticket');
+});
+
+Route::get('viewticket', function () {
+	return view('pages/viewticket');
+});
+
+Route::get('its', function () {
+	return view('pages/its');
 });

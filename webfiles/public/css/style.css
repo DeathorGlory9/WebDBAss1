@@ -1,0 +1,44 @@
+#logo
+{
+	float: left;
+}
+
+#login
+{
+	float:right;
+	color: #ee3324;
+	min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+	min-height: 90px; /* These two lines are counted as one :-)       */
+
+	display: flex;
+	align-items: center;
+}
+
+.content-container
+{
+	width: 90%;
+	display: table;
+  	margin: 0 auto;
+}
+
+.navbar-nav
+{
+	width: 100%;
+	box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+	display:table;
+}
+
+.navbar-nav li
+{
+	display:table-cell;
+	float:none;
+	text-align: center;
+	font-size: 18px;
+}
+
+.navbar-nav li a
+{
+	color: #ffffff !important;
+}

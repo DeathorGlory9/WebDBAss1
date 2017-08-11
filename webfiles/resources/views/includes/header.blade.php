@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="../public/css/header.css">
+
 <div class="navbar content-container">
 	<a id="logo" href="/">
 		<img src='../public/images/logo.jpg' width="200">

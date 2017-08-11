@@ -1,64 +1,48 @@
-#logo
-{
-	float: left;
+html, body, .body-content {
+  min-height: 100vh;
+  height: 100%;
 }
 
-#login
-{
-	float:right;
-	color: #ee3324;
-	min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-	min-height: 90px; /* These two lines are counted as one :-)       */
-
-	display: flex;
-	align-items: center;
+#header-container, #footer-container{
+	flex: 0 1 auto;
 }
 
-.nav-container
+#main-container
 {
-	background-color: #333;
+	flex: 1 1 auto;
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
+
 
 .content-container
 {
 	width: 80%;
-	display: table;
   	margin: 0 auto;
 }
 
-
-nav li
+.content-container-small
 {
-	text-align: center;
-	font-size: 18px;
+	width: 60%;
+  	margin: 0 auto;
 }
 
-nav li a
-{
-	color: #ffffff !important;
+.body-content{
+	display: flex;
+	flex-flow: column;
+	height: 100%;
 }
+
 
 #footer
 {
 	background-color: #333;
 	height: 45px;
-	margin-top: 25px;
 }
 
-.col
+.page-header
 {
-	margin-top: 25px;
-}
-
-#home-image
-{
-	background-size: cover;
-    background-position: center;
-    background-image: url('../images/pexels-photo-371794.jpeg');
-	width: 100%;
-	height: 75%;
-}
-
-html, body {
-  min-height: 100vh;
+	margin: 0px;
+	border-bottom: none;
+	color: #ee3324;
 }

@@ -15,12 +15,14 @@ class CreateCommentsTable extends Migration
     {
 		Schema::create('tickets', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('fname');
-			$table->string('lname');
+            $table->string('firstName');
+			$table->string('lastName');
 			$table->string('email');
-			$table->string('title');
+			$table->string('issueTitle');
 			$table->string('os');
 			$table->string('description');
+			$table->datetime('updated_at');
+			$table->datetime('created_at');
         });
 
         Schema::create('comments', function (Blueprint $table) {

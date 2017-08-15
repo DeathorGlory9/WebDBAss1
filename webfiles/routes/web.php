@@ -23,9 +23,7 @@ Route::get('faq', function () {
 	return view('pages/faq');
 });
 
-Route::get('submitticket', function () {
-	return view('pages/submitticket');
-});
+Route::get('submitticket', 'TicketController@create');
 
 Route::get('viewticket', function () {
 	return view('pages/viewticket');
@@ -34,5 +32,7 @@ Route::get('viewticket', function () {
 Route::get('its', function () {
 	return view('pages/its');
 });
+
+Route::resource('tickets', 'TicketController');
 
 //$logo  = public_path() . '/images/logo.jpg';

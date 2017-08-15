@@ -13,9 +13,19 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
+		Schema::create('tickets', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('fname');
+			$table->string('lname');
+			$table->string('email');
+			$table->string('title');
+			$table->string('os');
+			$table->string('description');
+        });
+
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('ticketId');
+            $table->integer('ticketId')->unsigned();
             $table->foreign('ticketId')->references('id')->on('tickets');
             $table->string('comment');
         });
@@ -28,6 +38,7 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('tickets');
+		Schema::dropIfExists('comments');
     }
 }

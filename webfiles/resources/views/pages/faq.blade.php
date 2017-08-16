@@ -1,6 +1,7 @@
 @extends('layouts.default')
 @section('content')
-<link rel="stylesheet" href="../public/css/faq.css">
+<link href="{{ asset('/css/faq.css') }}" rel="stylesheet">
+
 	<div class="content-container">
 		<div class="row">
 			<div class="col col-md-12">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Ticket;
+use DB;
 
 class TicketController extends Controller
 {
@@ -12,6 +13,7 @@ class TicketController extends Controller
         $ticket = new Ticket();
         return view('pages.submitticket', ['ticket' => $ticket]);
     }
+
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -23,7 +25,15 @@ class TicketController extends Controller
             'description' => 'required',
         ]);
         Ticket::create($request->all());
-        return redirect()->route('tickets.create') ->with('success','Ticket added
-successfully');
+        return redirect()->route('tickets.create') ->with('success','Ticket added successfully');
+    }
+
+	public function show($id)
+    {
+		$ticket = DB::table('tickets')->where('id', $id)->first();
+		//$ticket = DB::select("select * from tickets", [1]);
+
+		//return view('pages.viewticket');
+		return view('pages.viewticket', ['ticket' => $ticket] ) ;
     }
 }

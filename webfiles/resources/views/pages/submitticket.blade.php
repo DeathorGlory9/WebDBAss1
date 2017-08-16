@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('content')
-<link rel="stylesheet" href="../public/css/submitticket.css">
+<link href="{{ asset('/css/submitticket.css') }}" rel="stylesheet">
 <div class="content-container-small submit-ticket-container">
 	{{ Form::open(array('action' => 'TicketController@store')) }}
 	<!-- <form type="frmSubmit"> -->

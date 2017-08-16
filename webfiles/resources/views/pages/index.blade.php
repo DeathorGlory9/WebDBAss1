@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('content')
-	<link rel="stylesheet" href="../public/css/home.css">
+	<link href="{{ asset('/css/home.css') }}" rel="stylesheet">
 	<div class="content-container home-content-container">
 		<div class="home-container">
 			<div>

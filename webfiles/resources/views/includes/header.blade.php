@@ -2,7 +2,7 @@
 
 <div class="navbar content-container">
 	<a id="logo" href="/">
-		<img src='../public/images/logo.jpg' width="200">
+		<img src="{{asset('images/logo.jpg')}}" width="200">
 	</a>
 	<a id="login">
 		<h3>Login</h3>
@@ -12,11 +12,11 @@
 	<div class="content-container">
 		<nav>
 		    <ul class="nav nav-justified">
-		        <li><a href="index">Home</a></li>
-		        <li><a href="faq">FAQ</a></li>
-		        <li><a href="submitticket">Submit Ticket</a></li>
-		        <li><a href="viewticket">View Ticket</a></li>
-				<li><a href="its">ITS View</a></li>
+		        <li><a href="/WebDBAss1/webfiles/public/index">Home</a></li>
+		        <li><a href="/WebDBAss1/webfiles/public/faq">FAQ</a></li>
+		        <li><a href="/WebDBAss1/webfiles/public/submitticket">Submit Ticket</a></li>
+		        <li><a href="/WebDBAss1/webfiles/public/viewticket">View Ticket</a></li>
+				<li><a href="/WebDBAss1/webfiles/public/its">ITS View</a></li>
 		    </ul>
 		</nav>
 	</div>

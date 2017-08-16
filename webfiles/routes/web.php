@@ -25,9 +25,11 @@ Route::get('faq', function () {
 
 Route::get('submitticket', 'TicketController@create');
 
-Route::get('viewticket', function () {
-	return view('pages/viewticket');
-});
+Route::get('viewticket/{id}', 'TicketController@show');
+
+// Route::get('viewticket', function () {
+// 	return view('pages/viewticket');
+// });
 
 Route::get('its', function () {
 	return view('pages/its');

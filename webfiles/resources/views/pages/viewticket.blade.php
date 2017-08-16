@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('content')
-<link rel="stylesheet" href="../public/css/viewticket.css">
+<link href="{{ asset('/css/viewticket.css') }}" rel="stylesheet">
 <div class="content-container-small view-ticket-container">
 	<div class="row">
 		<div class="col-md-6">
@@ -15,26 +15,23 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col col-md-4">
-					<p id="tikFName">First Name</p>
-				</div>
-				<div class="col col-md-6">
-					<p id="tikLName">Last Name</p>
+				<div class="col col-md-12">
+					<p id="tikFName">Name: {{print($ticket->firstName)}} {{print($ticket->lastName)}}</p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col col-md-12">
-					<p id="tikIssueTitle">Issue Title</p>
+					<p id="tikIssueTitle">Issue: {{print($ticket->issueTitle)}}</p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col col-md-12">
-					<p id="tikOS">Operating System</p>
+					<p id="tikOS">OS: {{print($ticket->os)}}</p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col col-md-12">
-					<p id="tikDescription">Issue Description</p>
+					<p id="tikDescription">Description:<br/>{{print($ticket->description)}}</p>
 				</div>
 			</div>
 		</div>

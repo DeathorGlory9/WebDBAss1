@@ -25,6 +25,10 @@ Route::get('faq', function () {
 
 Route::get('submitticket', 'TicketController@create');
 
+Route::get('login', 'Login@login');
+
+Route::get('logout', 'Login@logout');
+
 Route::get('viewticket', 'TicketController@showall');
 
 Route::get('viewticket/{id}', 'TicketController@show');

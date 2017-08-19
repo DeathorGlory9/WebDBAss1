@@ -16,22 +16,22 @@
 			</div>
 			<div class="row">
 				<div class="col col-md-12">
-					<p id="tikFName">Name: {{print($ticket->firstName)}} {{print($ticket->lastName)}}</p>
+					<p id="tikFName">Name: {{$ticket->firstName}} {{$ticket->lastName}}</p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col col-md-12">
-					<p id="tikIssueTitle">Issue: {{print($ticket->issueTitle)}}</p>
+					<p id="tikIssueTitle">Issue: {{$ticket->issueTitle}}</p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col col-md-12">
-					<p id="tikOS">OS: {{print($ticket->os)}}</p>
+					<p id="tikOS">OS: {{$ticket->os}}</p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col col-md-12">
-					<p id="tikDescription">Description:<br/>{{print($ticket->description)}}</p>
+					<p id="tikDescription">Description:<br/>{{$ticket->description}}</p>
 				</div>
 			</div>
 		</div>

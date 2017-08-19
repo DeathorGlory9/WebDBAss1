@@ -31,9 +31,12 @@ class TicketController extends Controller
 	public function show($id)
     {
 		$ticket = DB::table('tickets')->where('id', $id)->first();
-		//$ticket = DB::select("select * from tickets", [1]);
-
-		//return view('pages.viewticket');
 		return view('pages.viewticket', ['ticket' => $ticket] ) ;
+    }
+
+	public function showall()
+    {
+		$tickets = DB::table('tickets')->get();
+		return view('pages.viewalltickets', ['tickets' => $tickets] ) ;
     }
 }

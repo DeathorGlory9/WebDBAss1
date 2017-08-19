@@ -15,7 +15,7 @@
 		        <li><a href="/WebDBAss1/webfiles/public/index">Home</a></li>
 		        <li><a href="/WebDBAss1/webfiles/public/faq">FAQ</a></li>
 		        <li><a href="/WebDBAss1/webfiles/public/submitticket">Submit Ticket</a></li>
-		        <li><a href="/WebDBAss1/webfiles/public/viewticket">View Ticket</a></li>
+		        <li><a href="/WebDBAss1/webfiles/public/viewticket">Tickets</a></li>
 				<li><a href="/WebDBAss1/webfiles/public/its">ITS View</a></li>
 		    </ul>
 		</nav>

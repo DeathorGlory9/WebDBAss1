@@ -31,9 +31,7 @@ Route::get('viewticket/{id}', 'TicketController@show');
 // 	return view('pages/viewticket');
 // });
 
-Route::get('its', function () {
-	return view('pages/its');
-});
+Route::get('its', 'TicketController@getAll');
 
 Route::resource('tickets', 'TicketController');
 

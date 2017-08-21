@@ -23,15 +23,15 @@ Route::get('faq', function () {
 	return view('pages/faq');
 });
 
+Route::get('viewticket', 'TicketController@showall');
+
+Route::get('viewticket/{id}', 'TicketController@show')->name('pages.viewticket');;
+
 Route::get('submitticket', 'TicketController@create');
 
 Route::get('login', 'Login@login');
 
 Route::get('logout', 'Login@logout');
-
-Route::get('viewticket', 'TicketController@showall');
-
-Route::get('viewticket/{id}', 'TicketController@show');
 
 Route::get('its', 'TicketController@getAll');
 

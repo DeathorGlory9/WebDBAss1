@@ -34,9 +34,9 @@ class TicketController extends Controller
 			'os' => $request->os,
 			'description' => $request->description,];
 
-        Ticket::create($ticket);
+        $ticket = Ticket::create($ticket);
 
-        return redirect()->route('tickets.create') ->with('success','Ticket added successfully');
+		return redirect()->route('pages.viewticket', [$ticket->id]);
     }
 
 	public function show($id)

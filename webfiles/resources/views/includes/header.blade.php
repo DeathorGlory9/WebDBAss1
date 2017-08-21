@@ -5,25 +5,21 @@
 		<img src="{{asset('images/logo.jpg')}}" width="200">
 	</a>
 	@if(Session::get('Login') == 'Yes')
-		<a id="login" href="/WebDBAss1/webfiles/public/logout">
-			<h3>Logout</h3>
-		</a>
+		<h3>{{Html::link('/logout', 'Logout', array('id'=>'login'))}}</h3>
 	@else
-		<a id="login" href="/WebDBAss1/webfiles/public/login">
-			<h3>Login</h3>
-		</a>
+		<h3>{{Html::link('/login', 'Login', array('id'=>'login'))}}</h3>
 	@endif
 </div>
 <div class="nav-container">
 	<div class="content-container">
 		<nav>
 		    <ul class="nav nav-justified">
-		        <li><a href="/WebDBAss1/webfiles/public/index">Home</a></li>
-		        <li><a href="/WebDBAss1/webfiles/public/faq">FAQ</a></li>
-		        <li><a href="/WebDBAss1/webfiles/public/submitticket">Submit Ticket</a></li>
-		        <li><a href="/WebDBAss1/webfiles/public/viewticket">Tickets</a></li>
+		        <li>{{Html::link('/index', 'Home' )}}</li>
+		        <li>{{Html::link('/faq', 'FAQ')}}</li>
+		        <li>{{Html::link('/submitticket', 'Submit Ticket')}}</li>
+		        <li>{{Html::link('/viewticket', 'View Tickets')}}</li>
 				@if(Session::get('Login') == 'Yes')
-					<li><a href="/WebDBAss1/webfiles/public/its">ITS View</a></li>
+					<li>{{Html::link('/its', 'ITS View')}}</li>
 				@endif
 		    </ul>
 		</nav>

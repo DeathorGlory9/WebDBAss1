@@ -44,8 +44,9 @@ class TicketController extends Controller
     {
 		$ticket = DB::table('tickets')->where('id', $id)->first();
 		$user = DB::table('users')->where('id', $ticket->userid)->first();
+		$comments = DB::table('comments')->where('ticketId', $id)->orderBy('created_at', 'ASC')->get();
 
-		return view('pages.viewticket', ['ticket' => $ticket,'user' => $user] ) ;
+		return view('pages.viewticket', ['ticket' => $ticket,'user' => $user,'comments' => $comments] ) ;
     }
 
 	public function showall()
@@ -62,21 +63,15 @@ class TicketController extends Controller
         return view('pages.its', ['tickets' => $tickets]);
     }
 
-    public function storeComment(Request $request) {
+    public function storeComment(Request $request)
+	{
         $this->validate($request, [
             'comment' => 'required|max:250',
             'author' => 'required|max:50'
         ]);
 
-        $user = User::create($request->all());
+        Comment::create($request->all());
 
-        $comment = [
-            'comment' => $request->comment,
-            'author' => $user->id,
-        ];
-
-        Comment::create($comment);
-
-        return redirect()->route('tickets.viewticket/{id}');
+        return redirect()->route('pages.viewticket', [$request->ticketid]);
     }
 }

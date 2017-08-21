@@ -15,13 +15,13 @@
                 @foreach($tickets as $ticket)
                   <tr>
                       @foreach($ticket as $value)
-                      <td>{{ $item->issueTitle }}</td>
+                      <td>{{ $value->issueTitle }}</td>
                       @endforeach
                           @foreach($ticket as $value)
-                              <td>{{ $item->status }}</td>
+                              <td>{{ $value->status }}</td>
                           @endforeach
                           @foreach($ticket as $value)
-                              <td>{{ $item->description }}</td>
+                              <td>{{ $value->description }}</td>
                           @endforeach
                   </tr>
                 @endforeach

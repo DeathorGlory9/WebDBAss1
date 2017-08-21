@@ -37,6 +37,7 @@ class TicketController extends Controller
 	public function showall()
     {
 		$tickets = DB::table('tickets')->get();
+
 		return view('pages.viewalltickets', ['tickets' => $tickets] ) ;
     }
 

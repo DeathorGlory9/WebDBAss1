@@ -11,7 +11,7 @@
 					@foreach ($tickets as $ticket)
 						<tr>
 							<td>{{$ticket->issueTitle}}</td>
-							<td>$ticket->status</td>
+							<td>{{$ticket->status}}</td>
 							<td>{{$ticket->os}}</td>
 							<td><a href="/WebDBAss1/webfiles/public/viewticket/{{$ticket->id}}">View ticket</a></td>
 						</tr>

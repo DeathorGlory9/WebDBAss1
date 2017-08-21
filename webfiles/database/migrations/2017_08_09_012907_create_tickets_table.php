@@ -21,7 +21,7 @@ class CreateTicketsTable extends Migration
 			$table->string('issueTitle');
 			$table->string('os');
 			$table->string('description');
-			$table->string('status')->default("open");
+			$table->string('status')->default("pending");
 			$table->datetime('updated_at');
 			$table->datetime('created_at');
         });

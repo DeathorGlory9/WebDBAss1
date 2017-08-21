@@ -18,6 +18,7 @@ class CreateCommentsTable extends Migration
             $table->integer('ticketId')->unsigned();
 			$table->integer('parentComment');
             $table->string('comment');
+            $table->string('author');
 			$table->datetime('updated_at');
 			$table->datetime('created_at');
         });

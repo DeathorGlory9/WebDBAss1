@@ -9,6 +9,6 @@ class Comment extends Model
     use Notifiable;
 
     protected $fillable = [
-        'ticketId', 'comment',
+        'ticketId', 'comment', 'author'
     ];
 }

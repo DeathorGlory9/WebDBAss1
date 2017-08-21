@@ -16,7 +16,7 @@
 			</div>
 			<div class="row">
 				<div class="col col-md-12">
-					<p id="tikFName">Name: {{$ticket->firstName}} {{$ticket->lastName}}</p>
+					<p id="tikFName">Name: {{$user->firstName}} {{$user->lastName}}</p>
 				</div>
 			</div>
 			<div class="row">

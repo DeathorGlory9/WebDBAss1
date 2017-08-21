@@ -5,12 +5,12 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Ticket extends Model {
+class User extends Model {
 
     use Notifiable;
 
     protected $fillable = [
-        'userid','issueTitle', 'os', 'description',
+        'firstName', 'lastName', 'email',
     ];
 
 }

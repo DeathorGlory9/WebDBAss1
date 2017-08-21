@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Ticket;
+use App\User;
 use DB;
 
 class TicketController extends Controller
@@ -17,21 +18,33 @@ class TicketController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'firstName' => 'required',
-            'lastName' => 'required',
-            'email' => 'required',
+			'firstName' => 'required',
+			'lastName' => 'required',
+			'email' => 'required',
             'issueTitle' => 'required',
             'os' => 'required',
             'description' => 'required',
         ]);
-        Ticket::create($request->all());
+
+		$user = User::create($request->all());
+
+		$ticket = [
+			'userid' => $user->id,
+			'issueTitle' => $request->issueTitle,
+			'os' => $request->os,
+			'description' => $request->description,];
+
+        Ticket::create($ticket);
+
         return redirect()->route('tickets.create') ->with('success','Ticket added successfully');
     }
 
 	public function show($id)
     {
 		$ticket = DB::table('tickets')->where('id', $id)->first();
-		return view('pages.viewticket', ['ticket' => $ticket] ) ;
+		$user = DB::table('users')->where('id', $ticket->userid)->first();
+
+		return view('pages.viewticket', ['ticket' => $ticket,'user' => $user] ) ;
     }
 
 	public function showall()

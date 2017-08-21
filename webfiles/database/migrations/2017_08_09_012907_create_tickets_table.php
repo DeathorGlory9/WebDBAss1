@@ -15,9 +15,7 @@ class CreateTicketsTable extends Migration
     {
 		Schema::create('tickets', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('firstName');
-			$table->string('lastName');
-			$table->string('email');
+            $table->integer('userid')->unsigned();
 			$table->string('issueTitle');
 			$table->string('os');
 			$table->string('description');
@@ -25,6 +23,10 @@ class CreateTicketsTable extends Migration
 			$table->datetime('updated_at');
 			$table->datetime('created_at');
         });
+
+		Schema::table('tickets', function (Blueprint $table) {
+			$table->foreign('userid')->references('id')->on('users');
+		});
     }
 
     /**

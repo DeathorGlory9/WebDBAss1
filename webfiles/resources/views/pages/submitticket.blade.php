@@ -5,6 +5,19 @@
 	{{ Form::open(array('action' => 'TicketController@store')) }}
 	<!-- <form type="frmSubmit"> -->
 		<div class="row">
+			@if ($errors->any())
+			<div class="row">
+				<div class="col col-md-12">
+					<div class="alert alert-danger">
+						<ul>
+							@foreach ($errors->all() as $error)
+								<li>{{ $error }}</li>
+							@endforeach
+						</ul>
+					</div>
+				</div>
+			</div>
+			@endif
 			<div class="col-md-6">
 				<div class="row">
 					<div class="col col-md-12">
@@ -30,7 +43,7 @@
 				<div class="row">
 					<div class="col col-md-12">
 						{!! Form::text('email', null,
-					        array('required',
+					        array('required', 'email',
 					              'placeholder'=>'Email')) !!}
 						<!-- <input type="text" placeholder="Email" name="txtEmail"> -->
 					</div>

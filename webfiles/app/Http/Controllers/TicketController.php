@@ -18,11 +18,11 @@ class TicketController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'firstName' => 'required',
-			'lastName' => 'required',
-			'email' => 'required',
-            'issueTitle' => 'required',
-            'os' => 'required',
+			'firstName' => 'required|max:50',
+			'lastName' => 'required|max:50',
+			'email' => 'required|email|max:100',
+            'issueTitle' => 'required|max:75',
+            'os' => 'required|max:50',
             'description' => 'required',
         ]);
 

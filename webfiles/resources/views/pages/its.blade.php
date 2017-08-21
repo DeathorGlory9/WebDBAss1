@@ -29,5 +29,4 @@
             </table>
         </div>
     </div>
-    ITS page
 @stop

@@ -14,9 +14,15 @@
                 <tbody>
                 @foreach($tickets as $ticket)
                   <tr>
-                      <td>{{ $ticket->issueTitle }}</td>
-                      <td>{{ $ticket->status }}</td>
-                      <td>{{ $ticket->description }}</td>
+                      @foreach($ticket as $value)
+                      <td>{{ $item->issueTitle }}</td>
+                      @endforeach
+                          @foreach($ticket as $value)
+                              <td>{{ $item->status }}</td>
+                          @endforeach
+                          @foreach($ticket as $value)
+                              <td>{{ $item->description }}</td>
+                          @endforeach
                   </tr>
                 @endforeach
                 </tbody>

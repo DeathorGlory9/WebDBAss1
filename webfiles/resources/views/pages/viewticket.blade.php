@@ -48,7 +48,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<form>
+					<form method="post" action="{{action('TicketController@storeComment')}}">
 						<textarea name="txtaIssueComment" placeholder="Comment"></textarea>
 						<input type="submit" id="btnSubmitComment" name="btnSubmitComment" value="Make Comment">
 					</form>

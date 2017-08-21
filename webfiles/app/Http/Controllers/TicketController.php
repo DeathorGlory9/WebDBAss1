@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use Illuminate\Http\Request;
 use App\Ticket;
 use App\User;
@@ -59,5 +60,23 @@ class TicketController extends Controller
         $tickets = DB::table('tickets')->get();
 
         return view('pages.its', ['tickets' => $tickets]);
+    }
+
+    public function storeComment(Request $request) {
+        $this->validate($request, [
+            'comment' => 'required|max:250',
+            'author' => 'required|max:50'
+        ]);
+
+        $user = User::create($request->all());
+
+        $comment = [
+            'comment' => $request->comment,
+            'author' => $user->id,
+        ];
+
+        Comment::create($comment);
+
+        return redirect()->route('tickets.viewticket/{id}');
     }
 }

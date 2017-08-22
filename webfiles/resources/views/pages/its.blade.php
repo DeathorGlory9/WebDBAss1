@@ -15,7 +15,20 @@
                 @foreach($tickets as $ticket)
                   <tr>
                       <td>{{ $ticket->issueTitle }}</td>
-                      <td>{{ $ticket->status }}</td>
+                      <td>
+						  {{ Form::open(['route' => 'update_ticket_status', 'enctype' => 'multipart/form-data']) }}
+						  	<div style="display:none;">
+								{!! Form::text('ticketid', $ticket->id, array('value'=>'$ticket->id')) !!}
+						  	</div>
+							  {{ Form::select('status', array(
+							   'Pending' => 'Pending',
+							   'In Progress' => 'In Progress',
+							   'Unresolved' => 'Unresolved',
+							   'Resolved' => 'Resolved'), $ticket->status
+							) }}
+							<input type="submit" id="btnSubmitComment" name="btnSubmitComment" value="Update">
+						</form>
+					</td>
                       <td>{{ $ticket->description }}</td>
                   </tr>
                 @endforeach

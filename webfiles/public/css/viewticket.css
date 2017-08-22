@@ -37,6 +37,8 @@
 	width: 100%;
 	margin-left: 0px;
 	padding-top: 15px;
+	overflow-y: scroll;
+	max-height: 350px;
 }
 
 #comment-section
@@ -83,14 +85,23 @@
 	float: left;
 	width: 80%;
 	padding-top: 5px;
+	background: #f0f0f0;
+	margin: 5px;
+	padding: 5px;
 }
 
-.comment input[type="text"]
+input[type=text]
 {
 	width: 100%;
 }
 
 .comment:nth-of-type(even)
 {
+	background: #e2dcdc;
 	float: right;
+}
+
+.commentAuthor
+{
+	font-size: 12px !important;
 }

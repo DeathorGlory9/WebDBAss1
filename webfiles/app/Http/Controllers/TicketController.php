@@ -74,4 +74,14 @@ class TicketController extends Controller
 
         return redirect()->route('pages.viewticket', [$request->ticketid]);
     }
+
+	public function updateTicketStatus(Request $request)
+	{
+
+		$ticket = DB::table('tickets')->where('id', $request->ticketid)->update(array('status' => $request->status));
+
+		$tickets = DB::table('tickets')->get();
+
+        return view('pages.its', ['tickets' => $tickets]);
+	}
 }

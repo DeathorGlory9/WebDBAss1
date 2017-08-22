@@ -45,6 +45,7 @@
 				<div id="comment-section" class="col-md-12">
 					@foreach ($comments as $comment)
 						<div class="comment">
+							<p class="commentAuthor">{{$comment->author}}</p>
 							{{$comment->comment}}
 						</div>
 					@endforeach

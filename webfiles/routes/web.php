@@ -38,4 +38,6 @@ Route::get('its', 'TicketController@getAll');
 Route::resource('tickets', 'TicketController');
 
 Route::post('viewticket/', ['uses' => 'TicketController@storeComment', 'as' => 'create_comment']);
+
+Route::post('its', ['uses' => 'TicketController@updateTicketStatus', 'as' => 'update_ticket_status']);
 //$logo  = public_path() . '/images/logo.jpg';
